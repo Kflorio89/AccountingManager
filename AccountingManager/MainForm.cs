@@ -14,6 +14,7 @@ namespace AccountingManager
 {
     public partial class MainPage : Form
     {
+        private IncomeData _incomes;
         private List<BillData> _bills;
         private List<BillData> Bills
         {
@@ -38,20 +39,22 @@ namespace AccountingManager
 
         private void UpdateWindow()
         {
-            PopulateOverview();
+            PopulateExpenses();
             PopulateSummary();
         }
 
-        private void PopulateOverview()
+        private void PopulateExpenses()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Bill Name \t\t Amount");
+            sb.AppendLine("----------------- Expenses ----------------");
+            sb.AppendLine("");
+            sb.AppendLine(string.Format("{0,-15}{1,20}", "Bill Name", "Amount"));
             sb.AppendLine("-----------------------------------------------");
             foreach (BillData data in _bills)
             {
-                sb.AppendLine($"{data.Name} \t\t ${data.Amount}");
+                sb.Append(string.Format("{0,-25}{1,20:C2}{2}", data.Name.Trim(), data.Amount, Environment.NewLine));
             }
-            _txtBillOverview.Text = sb.ToString();
+            _txtExpenses.Text = sb.ToString();
         }
 
         private void PopulateSummary()
@@ -68,11 +71,21 @@ namespace AccountingManager
                     secondMostExpensive = mostExpensive;
                     mostExpensive = _bills[i].Amount;
                 }
+                else if (_bills[i].Amount > secondMostExpensive)
+                {
+                    secondMostExpensive = _bills[i].Amount;
+                }
             }
-            sb.AppendLine($"Total: ${total}");
-            sb.AppendLine($"Most Expensive Bill: ${mostExpensive}");
-            sb.AppendLine($"Second Most Expensive Bill ${secondMostExpensive}");
+
+            sb.AppendLine(string.Format("{0,-20} {1,15:C2}", "Total:\t", total));
+            sb.AppendLine(string.Format("{0,-20}{1,15:C2}", "1st Expensive Bill:", mostExpensive));
+            sb.AppendLine(string.Format("{0,-20}{1,15:C2}", "2nd Expensive Bill:", secondMostExpensive));
             _txtSummary.Text = sb.ToString();
+        }
+
+        private void PopulateIncome()
+        {
+            // txtIncome
         }
 
         private void BtnAddBill_Click(object sender, EventArgs e)
@@ -101,7 +114,6 @@ namespace AccountingManager
 
             foreach (string file in txtFiles)
             {
-                
                 if (!Path.GetFileName(file).Contains("Data"))
                 {
                     continue;
@@ -165,6 +177,23 @@ namespace AccountingManager
 
             File.WriteAllLines(masterFile, dataLines);
             MessageBox.Show($"Saved contents to: {masterFile}");
+        }
+
+        private void BtnAddIncome_Click(object sender, EventArgs e)
+        {
+            string[] incomeInfo = _txtNewIncome.Text.Trim().Split(':');
+            if (incomeInfo.Length < 2)
+            {
+                //error on input
+                MessageBox.Show("Input Error", $"Invalid format for {_txtNewIncome.Text.Trim()}\nUse \':\' to separate, ex. name:value.");
+                return;
+            }
+            if (!double.TryParse(incomeInfo[1], out double amount))
+            {
+                MessageBox.Show("Input Error", $"Amount: {incomeInfo[1]} is not recognized as a number");
+                return;
+            }
+
         }
     }
 }

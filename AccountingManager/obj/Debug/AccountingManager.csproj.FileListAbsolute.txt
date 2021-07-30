@@ -2,7 +2,6 @@ C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\Accoun
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.MainPage.resources
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.Properties.Resources.resources
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.csproj.GenerateResource.cache
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.csproj.CoreCompileInputs.cache
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.exe.config
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.exe
 C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.pdb
