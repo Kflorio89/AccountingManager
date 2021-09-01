@@ -10,7 +10,7 @@ namespace AccountingManager
     {
         public string Name;
         public double Amount;
-        private enum _type
+        private enum BillType
         {
             Electric,
             Gas,
@@ -23,7 +23,7 @@ namespace AccountingManager
             CreditCard,
             Rent,
         }
-
+         
         public BillData (string name, double amount)
         {
             Name = name;
