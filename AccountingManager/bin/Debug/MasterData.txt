@@ -1,4 +1,0 @@
-Rent:2550
-Electric:200
-Gas:40
-Trash:20
