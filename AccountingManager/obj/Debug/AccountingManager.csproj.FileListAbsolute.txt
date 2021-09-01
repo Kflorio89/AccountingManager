@@ -1,9 +1,0 @@
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.csprojAssemblyReference.cache
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.MainPage.resources
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.Properties.Resources.resources
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.csproj.GenerateResource.cache
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.exe.config
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.exe
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\bin\Debug\AccountingManager.pdb
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.exe
-C:\Users\kflor\source\repos\AccountingManager\AccountingManager\obj\Debug\AccountingManager.pdb
