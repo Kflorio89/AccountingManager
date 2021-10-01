@@ -46,15 +46,20 @@ namespace AccountingManager
         private void PopulateExpenses()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("----------------- Expenses ----------------");
-            sb.AppendLine("");
-            sb.AppendLine(string.Format("{0,-15}{1,20}", "Bill Name", "Amount"));
-            sb.AppendLine("-----------------------------------------------");
+            StringBuilder sb2 = new StringBuilder();
+
+            sb.AppendLine("Bill Name");
+            sb.AppendLine("----------");
+            sb2.AppendLine("Cost");
+            sb2.AppendLine("----------");
+
             foreach (BillData data in _bills)
             {
-                sb.Append(string.Format("{0,-25}{1,20:C2}{2}", data.Name.Trim(), data.Amount, Environment.NewLine));
+                sb.AppendLine(string.Format("{0}", data.Name.Trim()));
+                sb2.AppendLine(string.Format("{0:C2}", data.Amount));
             }
             _txtExpenses.Text = sb.ToString();
+            _txtExpensesAmount.Text = sb2.ToString();
         }
 
         private void PopulateSummary()
